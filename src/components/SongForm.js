@@ -31,6 +31,17 @@ export default class SongForm extends React.Component {
 
     onSubmit(e){
         e.preventDefault();
+
+        // This has No Error Handling
+        this.props.onSubmit({
+            id: this.state.id,
+            artist: this.state.artist,
+            songName: this.state.songName,
+            date: this.state.date.valueOf(),
+            path: this.state.path,
+            accuracy: this.state.accuracy,
+            notes: this.state.notes
+        });
     }
 
     onTextChange = (value) => (evt) => {
@@ -138,23 +149,18 @@ export default class SongForm extends React.Component {
                         onChange={this.onTextChange("path")}
                     />
                 </div>
-
-                {/* Accuracy 
-                    TODO: Add verification for the following conditions
-                        - It's a number
-                        - It is between 0 and 100. (Allow for 0.00 and 100.00)
-                */}
+                
                 <div className = "form__input">
-                <label className = "form__label">Accuracy</label>
-                <input
-                    type="text"
-                    className="text-input"
-                    placeholder="Accuracy"
-                    autoFocus
-                    value={this.state.accuracy}
-                    onChange={this.onAccuracyChange}
-                />
-            </div>
+                    <label className = "form__label">Accuracy</label>
+                    <input
+                        type="text"
+                        className="text-input"
+                        placeholder="Accuracy"
+                        autoFocus
+                        value={this.state.accuracy}
+                        onChange={this.onAccuracyChange}
+                    />
+                </div>
 
                 {/* Notes */}
                 <div className = "form__input">
