@@ -60,13 +60,42 @@ test("Input - Note change", ()=>{
     expect(wrapper.state('notes')).toBe(value);
 })
 
-/* TODO
+test("Input - Accuracy Change - Valid Input", ()=>{
+    const value = "91.23";
+    const wrapper = shallow(<SongForm />);
+    const descriptionElem = wrapper.find('input').at(3) 
+    descriptionElem.simulate('change', {
+        target: {value}
+    })
+    expect(wrapper.state('accuracy')).toBe(value);
+})
 
-    -Once the accuracy code is written I need the following tests
-        - Accuracy
-        - Valid Form Submission
+test("Input - Accuracy Change - Invalid Input (Not Number)", ()=>{
+    const value = "Alpha";
+    const wrapper = shallow(<SongForm />);
+    const descriptionElem = wrapper.find('input').at(3) 
+    descriptionElem.simulate('change', {
+        target: {value}
+    })
+    expect(wrapper.state('accuracy')).toBe(""); // Empty String is the current default value
+})
+
+test("Input - Accuracy Change - Invalid Input (Too long)", ()=>{
+    const value = "10213.12";
+    const wrapper = shallow(<SongForm />);
+    const descriptionElem = wrapper.find('input').at(3) 
+    descriptionElem.simulate('change', {
+        target: {value}
+    })
+    expect(wrapper.state('accuracy')).toBe(""); // Empty String is the current default value
+})
+
+
+/* TODO
+    - Valid Form Submission
     - Once the error checking is in place
         - Invalid Form Submission
     - Once the Data Storage is in place
         - Recalling Data.
 */
+

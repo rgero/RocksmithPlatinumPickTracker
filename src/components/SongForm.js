@@ -73,7 +73,12 @@ export default class SongForm extends React.Component {
     }
 
     onAccuracyChange(e){
-        // TODO
+        const amount = e.target.value;
+        if (!amount || amount.match(/^\d{1,3}(\.\d{0,2})?$/)) {
+            this.setState(()=>({
+                accuracy: amount
+            }));
+        }
     }
 
     render() {
@@ -147,7 +152,7 @@ export default class SongForm extends React.Component {
                     placeholder="Accuracy"
                     autoFocus
                     value={this.state.accuracy}
-                    onChange={this.onAccuracyChange()}
+                    onChange={this.onAccuracyChange}
                 />
             </div>
 
