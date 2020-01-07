@@ -103,7 +103,7 @@ export default class SongForm extends React.Component {
 
     onAccuracyChange(e){
         const amount = e.target.value;
-        if (!amount || amount.match(/^\d{1,3}(\.\d{0,2})?$/)) {
+        if ((!amount || amount.match(/^\d{1,3}(\.\d{0,2})?$/)) && (!amount || parseFloat(amount) <= 100)) {
             this.setState(()=>({
                 accuracy: amount
             }));
