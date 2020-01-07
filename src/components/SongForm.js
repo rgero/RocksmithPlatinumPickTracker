@@ -176,7 +176,7 @@ export default class SongForm extends React.Component {
                         className="text-input"
                         placeholder="Difficulty"
                         autoFocus
-                        value={this.state.path}
+                        value={this.state.difficulty}
                         onChange={this.onTextChange("difficulty")}
                     />
                 </div>
