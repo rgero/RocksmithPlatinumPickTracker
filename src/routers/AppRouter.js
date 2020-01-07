@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
 //Components
-import { CreateSongEntry } from '../components/CreateSongEntry';
+import CreateSongEntry from '../components/CreateSongEntry';
 
 
 export const history = require("history").createBrowserHistory();
