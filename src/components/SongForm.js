@@ -2,8 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 
-import '../styles/components/SongForm.css';
-
 export default class SongForm extends React.Component {
 
     constructor(props)

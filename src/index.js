@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 // Styling
 import 'normalize.css/normalize.css';
-import './styles/index.css';
+import "./styles/style.scss"
 
 // Imports for React Dates
 import 'react-dates/initialize'; // We need this before we use react-dates
