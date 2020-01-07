@@ -21,6 +21,7 @@ export default class SongForm extends React.Component {
             songName: this.props.songInfo ? this.props.songInfo.songName : "",
             date: this.props.songInfo ? moment(this.props.songInfo.date) : moment(),
             path: this.props.songInfo ? this.props.songInfo.path : "",
+            difficulty: this.props.songInfo ? this.props.songInfo.difficulty : "",
             accuracy: this.props.songInfo ? (this.props.songInfo.accuracy/100).toString() : "",
             notes: this.props.songInfo ? this.props.songInfo.notes : "",
             calendarFocused: false,
@@ -34,7 +35,7 @@ export default class SongForm extends React.Component {
 
         //Validate Form;
         var currentError = "";
-        if (!this.state.artist || !this.state.songName || !this.state.date || !this.state.path || !this.state.accuracy)
+        if (!this.state.artist || !this.state.songName || !this.state.date || !this.state.path || !this.state.accuracy || !this.state.difficulty)
         {
             currentError = "Error: Please inspect the form";
         }
@@ -47,6 +48,7 @@ export default class SongForm extends React.Component {
                 songName: this.state.songName,
                 date: this.state.date.valueOf(),
                 path: this.state.path,
+                difficulty: this.state.difficulty,
                 accuracy: this.state.accuracy,
                 notes: this.state.notes
             });
@@ -71,6 +73,11 @@ export default class SongForm extends React.Component {
             case "path":
                 this.setState({
                     path: newValue
+                });
+                break;
+            case "difficulty":
+                this.setState({
+                    difficulty: newValue
                 });
                 break;
             case "notes":
@@ -160,7 +167,21 @@ export default class SongForm extends React.Component {
                         onChange={this.onTextChange("path")}
                     />
                 </div>
-                
+
+                {/* Difficulty */}
+                <div className = "form__input">
+                    <label className = "form__label">Difficulty</label>
+                    <input
+                        type="text"
+                        className="text-input"
+                        placeholder="Difficulty"
+                        autoFocus
+                        value={this.state.path}
+                        onChange={this.onTextChange("difficulty")}
+                    />
+                </div>
+
+                {/* Accuracy */}
                 <div className = "form__input">
                     <label className = "form__label">Accuracy</label>
                     <input

@@ -50,6 +50,16 @@ test("Input - Path change", ()=>{
     expect(wrapper.state('path')).toBe(value);
 })
 
+test("Input - Difficulty change", ()=>{
+    const value = "Hard"
+    const wrapper = shallow(<SongForm />);
+    const descriptionElem = wrapper.find('input').at(3) 
+    descriptionElem.simulate('change', {
+        target: {value}
+    })
+    expect(wrapper.state('difficulty')).toBe(value);
+})
+
 test("Input - Note change", ()=>{
     const value = "This song was really fun, I should play it more";
     const wrapper = shallow(<SongForm />);
@@ -63,7 +73,7 @@ test("Input - Note change", ()=>{
 test("Input - Accuracy Change - Valid Input", ()=>{
     const value = "91.23";
     const wrapper = shallow(<SongForm />);
-    const descriptionElem = wrapper.find('input').at(3) 
+    const descriptionElem = wrapper.find('input').at(4) 
     descriptionElem.simulate('change', {
         target: {value}
     })
@@ -73,7 +83,7 @@ test("Input - Accuracy Change - Valid Input", ()=>{
 test("Input - Accuracy Change - Invalid Input (Not Number)", ()=>{
     const value = "Alpha";
     const wrapper = shallow(<SongForm />);
-    const descriptionElem = wrapper.find('input').at(3) 
+    const descriptionElem = wrapper.find('input').at(4) 
     descriptionElem.simulate('change', {
         target: {value}
     })
@@ -83,7 +93,7 @@ test("Input - Accuracy Change - Invalid Input (Not Number)", ()=>{
 test("Input - Accuracy Change - Invalid Input (Too long)", ()=>{
     const value = "10213.12";
     const wrapper = shallow(<SongForm />);
-    const descriptionElem = wrapper.find('input').at(3) 
+    const descriptionElem = wrapper.find('input').at(4) 
     descriptionElem.simulate('change', {
         target: {value}
     })
