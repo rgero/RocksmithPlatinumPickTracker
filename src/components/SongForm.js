@@ -32,16 +32,27 @@ export default class SongForm extends React.Component {
     onSubmit(e){
         e.preventDefault();
 
-        // This has No Error Handling
-        this.props.onSubmit({
-            id: this.state.id,
-            artist: this.state.artist,
-            songName: this.state.songName,
-            date: this.state.date.valueOf(),
-            path: this.state.path,
-            accuracy: this.state.accuracy,
-            notes: this.state.notes
-        });
+        //Validate Form;
+        var currentError = "";
+        if (!this.state.artist || !this.state.songName || !this.state.date || !this.state.path || !this.state.accuracy)
+        {
+            currentError = "Error: Please inspect the form";
+        }
+        
+        if( currentError === ""){
+            this.setState({error: currentError})
+            this.props.onSubmit({
+                id: this.state.id,
+                artist: this.state.artist,
+                songName: this.state.songName,
+                date: this.state.date.valueOf(),
+                path: this.state.path,
+                accuracy: this.state.accuracy,
+                notes: this.state.notes
+            });
+        } else {
+            this.setState({error: currentError})
+        }
     }
 
     onTextChange = (value) => (evt) => {
@@ -166,7 +177,7 @@ export default class SongForm extends React.Component {
                 <div className = "form__input">
                     <label className = "form__label">Notes</label>
                     <textarea 
-                        placeholder="Notes about the song"
+                        placeholder="Notes about the song (optional)"
                         className="textarea"
                         value={this.state.note}
                         onChange={this.onTextChange("notes")}

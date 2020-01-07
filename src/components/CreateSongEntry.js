@@ -11,7 +11,7 @@ export class CreateSongEntry extends React.Component {
 
     onSubmit(song){
         this.props.onSubmit(song);
-        this.props.history.push('/')
+        this.props.history.push('/');
     }
 
     render(){
