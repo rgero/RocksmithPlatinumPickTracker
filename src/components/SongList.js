@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import _ from "lodash";
-
 // Import React Table
 import ReactTable, { ReactTableDefaults } from "react-table-6";
 import "react-table-6/react-table.css";

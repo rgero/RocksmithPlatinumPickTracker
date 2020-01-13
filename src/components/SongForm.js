@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
+import ErrorModal from './ErrorModal';
 
 export default class SongForm extends React.Component {
 
@@ -12,6 +13,8 @@ export default class SongForm extends React.Component {
         this.onDateChange = this.onDateChange.bind(this);
         this.onCalendarFocusChanged = this.onCalendarFocusChanged.bind(this);
         this.onAccuracyChange = this.onAccuracyChange.bind(this);
+        this.onPickLevelChange = this.onPickLevelChange.bind(this);
+        this.clearError = this.clearError.bind(this);
 
         this.state = {
             id: this.props.songInfo ? this.props.songInfo.id : "",
@@ -20,6 +23,7 @@ export default class SongForm extends React.Component {
             date: this.props.songInfo ? moment(this.props.songInfo.date) : moment(),
             path: this.props.songInfo ? this.props.songInfo.path : "",
             difficulty: this.props.songInfo ? this.props.songInfo.difficulty : "",
+            level: this.props.songInfo ? this.props.songInfo.level : "platinum",
             accuracy: this.props.songInfo ? (this.props.songInfo.accuracy/100).toString() : "",
             notes: this.props.songInfo ? this.props.songInfo.notes : "",
             calendarFocused: false,
@@ -35,7 +39,7 @@ export default class SongForm extends React.Component {
         var currentError = "";
         if (!this.state.artist || !this.state.songName || !this.state.date || !this.state.path || !this.state.accuracy || !this.state.difficulty)
         {
-            currentError = "Error: Please inspect the form";
+            currentError = "Please inspect the form";
         }
         
         if( currentError === ""){
@@ -47,6 +51,7 @@ export default class SongForm extends React.Component {
                 date: this.state.date.valueOf(),
                 path: this.state.path,
                 difficulty: this.state.difficulty,
+                level: this.state.level,
                 accuracy: this.state.accuracy,
                 notes: this.state.notes
             });
@@ -108,10 +113,21 @@ export default class SongForm extends React.Component {
         }
     }
 
+    onPickLevelChange(e){
+        const value = e.target.value
+        this.setState(()=>({
+            level: value
+        }))
+    }
+
+    clearError(){
+        this.setState({error: ""})
+    }
+
     render() {
         return (
             <form className="form" onSubmit={this.onSubmit}>
-                {this.state.error !== '' && <p className="form__error">{this.state.error}</p>}
+                {this.state.error !== '' && <ErrorModal errorMessage={this.state.error} clearError={this.clearError} />}
                 
                 {/* Artist */}
                 <div className = "form__input">
@@ -164,6 +180,19 @@ export default class SongForm extends React.Component {
                         value={this.state.path}
                         onChange={this.onTextChange("path")}
                     />
+                </div>
+
+                {/* Pick Level */}
+                <div className="form__input">
+                    <label className = "form__label">Pick Level</label>
+                    <select value={this.state.level}
+                            onChange={this.onPickLevelChange}
+                    >
+                        <option value="platinum">Platinum</option>
+                        <option value="gold">Gold</option>
+                        <option value="silver">Silver</option>
+                        <option value="bronze">Bronze</option>
+                    </select>
                 </div>
 
                 {/* Difficulty */}
