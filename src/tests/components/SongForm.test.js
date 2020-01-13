@@ -100,6 +100,16 @@ test("Input - Accuracy Change - Invalid Input (Too long)", ()=>{
     expect(wrapper.state('accuracy')).toBe(""); // Empty String is the current default value
 })
 
+test("Input - Pick Level Change", ()=>{
+    const value = "bronze";
+    const wrapper = shallow(<SongForm />);
+    expect(wrapper.state('level')).toBe("platinum");
+    const descriptionElem = wrapper.find('select').at(0) 
+    descriptionElem.simulate('change', {
+        target: {value}
+    })
+    expect(wrapper.state('level')).toBe("bronze"); // Empty String is the current default value
+})
 
 /* TODO
     - Valid Form Submission

@@ -54,7 +54,7 @@ exports[`Rendering the Song Form Form 1`] = `
       calendarInfoPosition="bottom"
       customCloseIcon={null}
       customInputIcon={null}
-      date={"2020-01-07T16:37:01.525Z"}
+      date={1970-01-01T00:00:00.000Z}
       dayPickerNavigationInlineStyles={null}
       daySize={39}
       disableScroll={false}
@@ -159,6 +159,40 @@ exports[`Rendering the Song Form Form 1`] = `
       type="text"
       value=""
     />
+  </div>
+  <div
+    className="form__input"
+  >
+    <label
+      className="form__label"
+    >
+      Pick Level
+    </label>
+    <select
+      onChange={[Function]}
+      value="platinum"
+    >
+      <option
+        value="platinum"
+      >
+        Platinum
+      </option>
+      <option
+        value="gold"
+      >
+        Gold
+      </option>
+      <option
+        value="silver"
+      >
+        Silver
+      </option>
+      <option
+        value="bronze"
+      >
+        Bronze
+      </option>
+    </select>
   </div>
   <div
     className="form__input"
