@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import _ from "lodash";
 
@@ -51,6 +52,9 @@ export const SongList = (props) => {
     const columnDefaults = { ...ReactTableDefaults.column, headerClassName: 'wordwrap'}
     return (
         <div className="content-container">
+            <div className="content-navbar">
+                <Link className="button" to="/create">Log New Pick</Link>
+            </div>
             <ReactTable
                 data={data}
                 column={columnDefaults}
