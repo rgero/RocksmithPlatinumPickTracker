@@ -61,28 +61,39 @@ export const SongList = (props) => {
                     Header: "Platinum Picks",
                     columns: [
                         {
-                        Header: "Artist Name",
-                        accessor: "artist"
+                            Header: "Artist Name",
+                            accessor: "artist",
+                            style: { 'whiteSpace': 'unset'}
                         },
                         {
                             Header: "Song Name",
-                            accessor: "songName"
+                            accessor: "songName",
+                            style: { 'whiteSpace': 'unset'}
                         },
                         {
                             Header: "Date",
-                            accessor: "date"
+                            accessor: "date",
+                            style: { 'whiteSpace': 'unset'}
                         },
                         {
                             Header: "Path",
-                            accessor: "path"
+                            accessor: "path",
+                            style: { 'whiteSpace': 'unset'}
                         },
                         {
                             Header: "Difficulty",
-                            accessor: "difficulty"
+                            accessor: "difficulty",
+                            style: { 'whiteSpace': 'unset'}
+                        },
+                        {
+                            Header: "Pick Level",
+                            accessor: "level",
+                            style: { 'whiteSpace': 'unset'}
                         },
                         {
                             Header: "Accuracy",
-                            accessor: "accuracy"
+                            accessor: "accuracy",
+                            style: { 'whiteSpace': 'unset'}
                         }
                     ]
                     }
