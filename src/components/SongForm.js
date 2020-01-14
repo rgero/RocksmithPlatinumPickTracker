@@ -188,10 +188,10 @@ export default class SongForm extends React.Component {
                     <select value={this.state.level}
                             onChange={this.onPickLevelChange}
                     >
-                        <option value="platinum">Platinum</option>
-                        <option value="gold">Gold</option>
-                        <option value="silver">Silver</option>
-                        <option value="bronze">Bronze</option>
+                        <option value="Platinum">Platinum</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Silver">Silver</option>
+                        <option value="Bronze">Bronze</option>
                     </select>
                 </div>
 

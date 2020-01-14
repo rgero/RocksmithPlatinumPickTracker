@@ -14,9 +14,48 @@ import 'react-dates/lib/css/_datepicker.css';
 import AppRouter from './routers/AppRouter';
 
 import configureStore from './store/configureStore';
+import {setSongs} from './actions/songs';
 
 
 const store = configureStore();
+
+// Importing Mock Data - REMOVE ONCE DATABASE INTEGRATION IS INTRODUCED.
+let DLCSong = [
+    {
+        artist: "Rise Against",
+        songName: "Savior",
+        path: "Lead",
+        date: "2020-01-06",
+        difficulty: "Master",
+        accuracy: "100.00"
+    },
+    {
+        artist: "Rise Against",
+        songName: "Savior",
+        path: "Bass",
+        date: "2020-01-06",
+        difficulty: "Master",
+        accuracy: "100.00"
+    },
+    {
+        artist: "Jake Kantzer's Super Band",
+        songName: "RAPTOR!!",
+        path: "Lead",
+        date: "2020-01-06",
+        difficulty: "Easy. To strong",
+        accuracy: "100.00"
+    },
+    {
+        artist: "Bob Marley",
+        songName: "Some Bob Marley Song",
+        path: "Rhythm",
+        date: "2020-01-06",
+        difficulty: "Master",
+        accuracy: "100.00"
+    }
+]
+
+store.dispatch(setSongs(DLCSong));
 
 const jsx = (
     <Provider store={store}>
