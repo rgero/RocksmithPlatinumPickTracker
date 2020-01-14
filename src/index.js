@@ -38,7 +38,7 @@ let DLCSong = [
         accuracy: "100.00"
     },
     {
-        artist: "Jake Kantzer's Super Band",
+        artist: "Jake's Super Band",
         songName: "RAPTOR!!",
         path: "Lead",
         date: "2020-01-06",
