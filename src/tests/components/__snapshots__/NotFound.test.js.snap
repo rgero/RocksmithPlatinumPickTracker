@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Not Found rendering 1`] = `
+<div>
+  <Header />
+  <div
+    className="content-container"
+  >
+    <div
+      className="content-container__title"
+    >
+      Page Not Found
+    </div>
+    <div>
+      The page you are trying to access does not exist, please return 
+      <Link
+        to="/"
+      >
+        home
+      </Link>
+    </div>
+  </div>
+</div>
+`;

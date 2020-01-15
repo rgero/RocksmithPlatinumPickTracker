@@ -1,26 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-
-// Styling
-import 'normalize.css/normalize.css';
-import "./styles/style.scss"
-
-// Imports for React Dates
-import 'react-dates/initialize'; // We need this before we use react-dates
-import 'react-dates/lib/css/_datepicker.css';
-
-// My Components
-import AppRouter from './routers/AppRouter';
-
-import configureStore from './store/configureStore';
-import {setSongs} from './actions/songs';
-
-
-const store = configureStore();
-
-// Importing Mock Data - REMOVE ONCE DATABASE INTEGRATION IS INTRODUCED.
-let DLCSong = [
+const testSongs = [
     {
         artist: "Rise Against",
         songName: "Savior",
@@ -59,12 +37,4 @@ let DLCSong = [
     }
 ]
 
-store.dispatch(setSongs(DLCSong));
-
-const jsx = (
-    <Provider store={store}>
-        <AppRouter />
-    </Provider>
-)
-
-ReactDOM.render(jsx, document.getElementById('root'));
+export default testSongs;
