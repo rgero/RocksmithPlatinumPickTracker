@@ -22,6 +22,7 @@ const store = configureStore();
 // Importing Mock Data - REMOVE ONCE DATABASE INTEGRATION IS INTRODUCED.
 let DLCSong = [
     {
+        id: "1",
         artist: "Rise Against",
         songName: "Savior",
         path: "Lead",
@@ -31,6 +32,7 @@ let DLCSong = [
         accuracy: "100.00"
     },
     {
+        id: "2",
         artist: "Rise Against",
         songName: "Savior",
         path: "Bass",
@@ -40,6 +42,7 @@ let DLCSong = [
         accuracy: "100.00"
     },
     {
+        id: "3",
         artist: "Jake's Super Band",
         songName: "RAPTOR!!",
         path: "Lead",
@@ -49,6 +52,7 @@ let DLCSong = [
         accuracy: "100.00"
     },
     {
+        id: "4",
         artist: "Bob Marley",
         songName: "Some Bob Marley Song",
         path: "Rhythm",

@@ -5,6 +5,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import SongListPage from '../components/SongList';
 import CreateSongEntryPage from '../components/CreateSongEntry';
 import NotFoundPage from '../components/NotFoundPage';
+import EditSongEntry from '../components/EditSongEntry';
 
 
 
@@ -15,7 +16,8 @@ const AppRouter = () => (
     <div>
       <Switch>
         <Route path="/" component={SongListPage} exact={true} />
-        <Route path="/create" component={CreateSongEntryPage}/>    
+        <Route path="/create" component={CreateSongEntryPage}/>
+        <Route path="/edit/:id" component={EditSongEntry} />    
         <Route component={NotFoundPage}/>    
       </Switch>
     </div>

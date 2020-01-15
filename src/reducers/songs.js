@@ -3,6 +3,10 @@ const songsReducerDefaultState = [];
 const songsReducer = (state = songsReducerDefaultState, action) => {
     switch(action.type){
         case "ADD_SONG":
+            // Get the highest ID - this is temporary until I set up firebase.
+            var songsLength = state.length;
+            action.song.id = (songsLength+1).toString();
+            
             return state.concat(action.song);
         case "REMOVE_SONG":
             return state.filter(function(testOption){
