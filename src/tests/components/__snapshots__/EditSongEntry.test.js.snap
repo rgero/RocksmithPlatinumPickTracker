@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot rendering test 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Editing '
+        Rise Against
+         - 
+        Savior
+        '
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <SongForm
+      onSubmit={[Function]}
+      songInfo={
+        Object {
+          "accuracy": "100.00",
+          "artist": "Rise Against",
+          "date": "2020-01-06",
+          "difficulty": "Master",
+          "level": "Bronze",
+          "path": "Lead",
+          "songName": "Savior",
+        }
+      }
+    />
+    <button
+      className="button button--secondary"
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;

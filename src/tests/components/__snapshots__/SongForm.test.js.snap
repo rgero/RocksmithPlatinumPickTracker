@@ -240,6 +240,7 @@ exports[`Rendering the Song Form Form 1`] = `
       className="textarea"
       onChange={[Function]}
       placeholder="Notes about the song (optional)"
+      value=""
     />
   </div>
   <div

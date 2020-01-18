@@ -24,7 +24,7 @@ export default class SongForm extends React.Component {
             path: this.props.songInfo ? this.props.songInfo.path : "",
             difficulty: this.props.songInfo ? this.props.songInfo.difficulty : "",
             level: this.props.songInfo ? this.props.songInfo.level : "platinum",
-            accuracy: this.props.songInfo ? (this.props.songInfo.accuracy/100).toString() : "",
+            accuracy: this.props.songInfo ? (this.props.songInfo.accuracy).toString() : "",
             notes: this.props.songInfo ? this.props.songInfo.notes : "",
             calendarFocused: false,
             error: "",
@@ -227,7 +227,7 @@ export default class SongForm extends React.Component {
                     <textarea 
                         placeholder="Notes about the song (optional)"
                         className="textarea"
-                        value={this.state.note}
+                        value={this.state.notes}
                         onChange={this.onTextChange("notes")}
                     >
                     </textarea>
