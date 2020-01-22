@@ -7,7 +7,6 @@ import moment from 'moment';
 import ReactTable, { ReactTableDefaults } from "react-table-6";
 import "react-table-6/react-table.css";
 
-import Header from './Header';
 
 export class SongList extends React.Component {
     
@@ -29,7 +28,6 @@ export class SongList extends React.Component {
         const columnDefaults = { ...ReactTableDefaults.column, headerClassName: 'wordwrap'}
         return (
                 <div>
-                    <Header/>
                     <div className="content-container">
                         <div className="content-navbar">
                             <Link className="button" to="/create">Log New Pick</Link>

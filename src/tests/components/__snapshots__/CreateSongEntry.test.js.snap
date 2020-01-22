@@ -2,7 +2,6 @@
 
 exports[`Snapshot test of the rendering 1`] = `
 <div>
-  <Header />
   <div
     className="page-header"
   >

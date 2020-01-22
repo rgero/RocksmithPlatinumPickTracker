@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import SongForm from './SongForm';
-import {editSong, removeSong} from '../actions/songs';
+import {startEditSong, startRemoveSong} from '../actions/songs';
 
 export class EditSongPage extends React.Component {
     constructor(props){
@@ -44,9 +44,9 @@ export class EditSongPage extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         onSubmit: (id, song) => { 
-            dispatch(editSong(id, song))
+            dispatch(startEditSong(id, song))
         },
-        removeItem: (id) => dispatch(removeSong(id))
+        removeItem: (id) => dispatch(startRemoveSong(id))
     }
 }
 
