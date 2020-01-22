@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Header from './Header';
 import SongForm from './SongForm';
-import { addSong } from '../actions/songs';
+import { startAddSong } from '../actions/songs';
 
 
 export class CreateSongEntry extends React.Component {
@@ -19,7 +18,6 @@ export class CreateSongEntry extends React.Component {
     render(){
         return(
             <div>
-                <Header/>
                 <div className="page-header">
                     <div className="content-container">
                         <h1 className="page-header__title">Add Song</h1>
@@ -35,7 +33,7 @@ export class CreateSongEntry extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onSubmit: (song) => dispatch(addSong(song))
+        onSubmit: (song) => dispatch(startAddSong(song))
     }
 }
 
