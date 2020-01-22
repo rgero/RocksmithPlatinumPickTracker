@@ -2,7 +2,7 @@
 
 exports[`Testing Not Found rendering 1`] = `
 <div>
-  <Header />
+  <Connect(Header) />
   <div
     className="content-container"
   >

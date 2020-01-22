@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Login Page rendering 1`] = `
+<div
+  className="box-layout"
+>
+  <div
+    className="box-layout__box"
+  >
+    <h1
+      className="box-layout__title"
+    >
+      Welcome to the Rocksmith Pick Tracker
+    </h1>
+    <p>
+      It's time to write a tag-line
+    </p>
+    <button
+      className="button"
+    >
+      Login with Google!
+    </button>
+  </div>
+</div>
+`;

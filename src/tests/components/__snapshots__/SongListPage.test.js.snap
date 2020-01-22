@@ -1,0 +1,470 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering No Songs 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <div
+      className="content-navbar"
+    >
+      <Link
+        className="button"
+        to="/create"
+      >
+        Log New Pick
+      </Link>
+    </div>
+    <ReactTable
+      AggregatedComponent={[Function]}
+      ExpanderComponent={[Function]}
+      FilterComponent={[Function]}
+      LoadingComponent={[Function]}
+      NoDataComponent={[Function]}
+      PadRowComponent={[Function]}
+      PaginationComponent={[Function]}
+      PivotValueComponent={[Function]}
+      ResizerComponent={[Function]}
+      TableComponent={[Function]}
+      TbodyComponent={[Function]}
+      TdComponent={[Function]}
+      TfootComponent={[Function]}
+      ThComponent={[Function]}
+      TheadComponent={[Function]}
+      TrComponent={[Function]}
+      TrGroupComponent={[Function]}
+      aggregatedKey="_aggregated"
+      className="-striped -highlight"
+      collapseOnDataChange={true}
+      collapseOnPageChange={true}
+      collapseOnSortingChange={true}
+      column={
+        Object {
+          "Aggregated": undefined,
+          "Cell": undefined,
+          "Expander": undefined,
+          "Filter": undefined,
+          "Footer": undefined,
+          "Header": undefined,
+          "Pivot": undefined,
+          "PivotValue": undefined,
+          "Placeholder": undefined,
+          "aggregate": undefined,
+          "className": "",
+          "filterAll": false,
+          "filterMethod": undefined,
+          "filterable": undefined,
+          "footerClassName": "",
+          "footerStyle": Object {},
+          "getFooterProps": [Function],
+          "getHeaderProps": [Function],
+          "getProps": [Function],
+          "headerClassName": "wordwrap",
+          "headerStyle": Object {},
+          "minResizeWidth": 11,
+          "minWidth": 100,
+          "resizable": undefined,
+          "show": true,
+          "sortMethod": undefined,
+          "sortable": undefined,
+          "style": Object {},
+        }
+      }
+      columns={
+        Array [
+          Object {
+            "Header": "Platinum Picks",
+            "columns": Array [
+              Object {
+                "Header": "Artist Name",
+                "accessor": "artist",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Song Name",
+                "accessor": "songName",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Date",
+                "accessor": [Function],
+                "id": "date",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Path",
+                "accessor": "path",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Difficulty",
+                "accessor": "difficulty",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Pick Level",
+                "accessor": "level",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Accuracy",
+                "accessor": "accuracy",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      data={Array []}
+      defaultExpanded={Object {}}
+      defaultFilterMethod={[Function]}
+      defaultFiltered={Array []}
+      defaultPage={0}
+      defaultPageSize={10}
+      defaultResized={Array []}
+      defaultSortDesc={false}
+      defaultSortMethod={[Function]}
+      defaultSorted={Array []}
+      expanderDefaults={
+        Object {
+          "filterable": false,
+          "resizable": false,
+          "sortable": false,
+          "width": 35,
+        }
+      }
+      filterable={false}
+      freezeWhenExpanded={false}
+      getLoadingProps={[Function]}
+      getNoDataProps={[Function]}
+      getPaginationProps={[Function]}
+      getProps={[Function]}
+      getResizerProps={[Function]}
+      getTableProps={[Function]}
+      getTbodyProps={[Function]}
+      getTdProps={[Function]}
+      getTfootProps={[Function]}
+      getTfootTdProps={[Function]}
+      getTfootTrProps={[Function]}
+      getTheadFilterProps={[Function]}
+      getTheadFilterThProps={[Function]}
+      getTheadFilterTrProps={[Function]}
+      getTheadGroupProps={[Function]}
+      getTheadGroupThProps={[Function]}
+      getTheadGroupTrProps={[Function]}
+      getTheadProps={[Function]}
+      getTheadThProps={[Function]}
+      getTheadTrProps={[Function]}
+      getTrGroupProps={[Function]}
+      getTrProps={[Function]}
+      groupedByPivotKey="_groupedByPivot"
+      indexKey="_index"
+      loading={false}
+      loadingText="Loading..."
+      multiSort={true}
+      nestingLevelKey="_nestingLevel"
+      nextText="Next"
+      noDataText="No rows found"
+      ofText="of"
+      onFetchData={[Function]}
+      originalKey="_original"
+      pageJumpText="jump to page"
+      pageSizeOptions={
+        Array [
+          5,
+          10,
+          20,
+          25,
+          50,
+          100,
+        ]
+      }
+      pageText="Page"
+      pivotDefaults={Object {}}
+      pivotIDKey="_pivotID"
+      pivotValKey="_pivotVal"
+      previousText="Previous"
+      resizable={true}
+      resolveData={[Function]}
+      rowsSelectorText="rows per page"
+      rowsText="rows"
+      showPageJump={true}
+      showPageSizeOptions={true}
+      showPagination={true}
+      showPaginationBottom={true}
+      showPaginationTop={false}
+      sortable={true}
+      style={Object {}}
+      subRowsKey="_subRows"
+    />
+  </div>
+</div>
+`;
+
+exports[`Rendering Songs 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <div
+      className="content-navbar"
+    >
+      <Link
+        className="button"
+        to="/create"
+      >
+        Log New Pick
+      </Link>
+    </div>
+    <ReactTable
+      AggregatedComponent={[Function]}
+      ExpanderComponent={[Function]}
+      FilterComponent={[Function]}
+      LoadingComponent={[Function]}
+      NoDataComponent={[Function]}
+      PadRowComponent={[Function]}
+      PaginationComponent={[Function]}
+      PivotValueComponent={[Function]}
+      ResizerComponent={[Function]}
+      TableComponent={[Function]}
+      TbodyComponent={[Function]}
+      TdComponent={[Function]}
+      TfootComponent={[Function]}
+      ThComponent={[Function]}
+      TheadComponent={[Function]}
+      TrComponent={[Function]}
+      TrGroupComponent={[Function]}
+      aggregatedKey="_aggregated"
+      className="-striped -highlight"
+      collapseOnDataChange={true}
+      collapseOnPageChange={true}
+      collapseOnSortingChange={true}
+      column={
+        Object {
+          "Aggregated": undefined,
+          "Cell": undefined,
+          "Expander": undefined,
+          "Filter": undefined,
+          "Footer": undefined,
+          "Header": undefined,
+          "Pivot": undefined,
+          "PivotValue": undefined,
+          "Placeholder": undefined,
+          "aggregate": undefined,
+          "className": "",
+          "filterAll": false,
+          "filterMethod": undefined,
+          "filterable": undefined,
+          "footerClassName": "",
+          "footerStyle": Object {},
+          "getFooterProps": [Function],
+          "getHeaderProps": [Function],
+          "getProps": [Function],
+          "headerClassName": "wordwrap",
+          "headerStyle": Object {},
+          "minResizeWidth": 11,
+          "minWidth": 100,
+          "resizable": undefined,
+          "show": true,
+          "sortMethod": undefined,
+          "sortable": undefined,
+          "style": Object {},
+        }
+      }
+      columns={
+        Array [
+          Object {
+            "Header": "Platinum Picks",
+            "columns": Array [
+              Object {
+                "Header": "Artist Name",
+                "accessor": "artist",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Song Name",
+                "accessor": "songName",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Date",
+                "accessor": [Function],
+                "id": "date",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Path",
+                "accessor": "path",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Difficulty",
+                "accessor": "difficulty",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Pick Level",
+                "accessor": "level",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+              Object {
+                "Header": "Accuracy",
+                "accessor": "accuracy",
+                "style": Object {
+                  "whiteSpace": "unset",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      data={
+        Array [
+          Object {
+            "accuracy": "100.00",
+            "artist": "Rise Against",
+            "date": "2020-01-06",
+            "difficulty": "Master",
+            "level": "Bronze",
+            "path": "Lead",
+            "songName": "Savior",
+          },
+          Object {
+            "accuracy": "100.00",
+            "artist": "Rise Against",
+            "date": "2020-01-06",
+            "difficulty": "Master",
+            "level": "Platinum",
+            "path": "Bass",
+            "songName": "Savior",
+          },
+          Object {
+            "accuracy": "100.00",
+            "artist": "Jake's Super Band",
+            "date": "2020-01-06",
+            "difficulty": "Easy. To strong",
+            "level": "Silver",
+            "path": "Lead",
+            "songName": "RAPTOR!!",
+          },
+          Object {
+            "accuracy": "100.00",
+            "artist": "Bob Marley",
+            "date": "2020-01-06",
+            "difficulty": "Master",
+            "level": "Gold",
+            "path": "Rhythm",
+            "songName": "Some Bob Marley Song",
+          },
+        ]
+      }
+      defaultExpanded={Object {}}
+      defaultFilterMethod={[Function]}
+      defaultFiltered={Array []}
+      defaultPage={0}
+      defaultPageSize={10}
+      defaultResized={Array []}
+      defaultSortDesc={false}
+      defaultSortMethod={[Function]}
+      defaultSorted={Array []}
+      expanderDefaults={
+        Object {
+          "filterable": false,
+          "resizable": false,
+          "sortable": false,
+          "width": 35,
+        }
+      }
+      filterable={false}
+      freezeWhenExpanded={false}
+      getLoadingProps={[Function]}
+      getNoDataProps={[Function]}
+      getPaginationProps={[Function]}
+      getProps={[Function]}
+      getResizerProps={[Function]}
+      getTableProps={[Function]}
+      getTbodyProps={[Function]}
+      getTdProps={[Function]}
+      getTfootProps={[Function]}
+      getTfootTdProps={[Function]}
+      getTfootTrProps={[Function]}
+      getTheadFilterProps={[Function]}
+      getTheadFilterThProps={[Function]}
+      getTheadFilterTrProps={[Function]}
+      getTheadGroupProps={[Function]}
+      getTheadGroupThProps={[Function]}
+      getTheadGroupTrProps={[Function]}
+      getTheadProps={[Function]}
+      getTheadThProps={[Function]}
+      getTheadTrProps={[Function]}
+      getTrGroupProps={[Function]}
+      getTrProps={[Function]}
+      groupedByPivotKey="_groupedByPivot"
+      indexKey="_index"
+      loading={false}
+      loadingText="Loading..."
+      multiSort={true}
+      nestingLevelKey="_nestingLevel"
+      nextText="Next"
+      noDataText="No rows found"
+      ofText="of"
+      onFetchData={[Function]}
+      originalKey="_original"
+      pageJumpText="jump to page"
+      pageSizeOptions={
+        Array [
+          5,
+          10,
+          20,
+          25,
+          50,
+          100,
+        ]
+      }
+      pageText="Page"
+      pivotDefaults={Object {}}
+      pivotIDKey="_pivotID"
+      pivotValKey="_pivotVal"
+      previousText="Previous"
+      resizable={true}
+      resolveData={[Function]}
+      rowsSelectorText="rows per page"
+      rowsText="rows"
+      showPageJump={true}
+      showPageSizeOptions={true}
+      showPagination={true}
+      showPaginationBottom={true}
+      showPaginationTop={false}
+      sortable={true}
+      style={Object {}}
+      subRowsKey="_subRows"
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Test 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="header__content"
+  >
+    <Link
+      className="header__title"
+      exact="true"
+      to="/practices"
+    >
+      <h1>
+        Rocksmith Pick Tracker
+      </h1>
+    </Link>
+    <button
+      className="button button--link"
+      onClick={[Function]}
+    >
+      Log out
+    </button>
+  </div>
+</header>
+`;
