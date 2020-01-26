@@ -27,7 +27,7 @@ export const setSongs = (songs) => ({
 export const startSetSongs = () => {
     return (dispatch, getState) => {
       const uid = getState().auth.uid;
-      return database.ref(`users/${uid}/songs`).once('value').then((snapshot) => {
+      return database.ref(`users/${uid}/pick_tracker/songs`).once('value').then((snapshot) => {
         const songs = [];
   
         snapshot.forEach((childSnapshot) => {
@@ -45,7 +45,7 @@ export const startSetSongs = () => {
   export const startEditSong = (id, update) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        return database.ref(`users/${uid}/songs/${id}`).update({...update})
+        return database.ref(`users/${uid}/pick_tracker/songs/${id}`).update({...update})
         .then(()=>{
             dispatch(editSong(id, update))
         })
@@ -56,7 +56,7 @@ export const startSetSongs = () => {
 export const startRemoveSong = ( id ) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        return database.ref(`users/${uid}/songs/${id}`).remove()
+        return database.ref(`users/${uid}/pick_tracker/songs/${id}`).remove()
         .then(()=> {
             dispatch(removeSong(id))
         })
@@ -79,7 +79,7 @@ export const startAddSong = (songData = {}) => {
 
         const song = {date, artist, songName, path, difficulty, level, accuracy, notes};
 
-        return database.ref(`users/${uid}/songs`).push(song).then((ref)=> {
+        return database.ref(`users/${uid}/pick_tracker/songs`).push(song).then((ref)=> {
             dispatch(addSong({
                 id: ref.key,
                 ...song
