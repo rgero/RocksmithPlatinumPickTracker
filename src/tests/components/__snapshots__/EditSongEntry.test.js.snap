@@ -30,7 +30,9 @@ exports[`Snapshot rendering test 1`] = `
           "artist": "Rise Against",
           "date": "2020-01-06",
           "difficulty": "Master",
+          "id": "1",
           "level": "Bronze",
+          "notes": "",
           "path": "Lead",
           "songName": "Savior",
         }
