@@ -73,7 +73,7 @@ exports[`Rendering No Songs 1`] = `
       columns={
         Array [
           Object {
-            "Header": "Platinum Picks",
+            "Header": "Your Rocksmith Picks",
             "columns": Array [
               Object {
                 "Header": "Artist Name",
@@ -288,7 +288,7 @@ exports[`Rendering Songs 1`] = `
       columns={
         Array [
           Object {
-            "Header": "Platinum Picks",
+            "Header": "Your Rocksmith Picks",
             "columns": Array [
               Object {
                 "Header": "Artist Name",

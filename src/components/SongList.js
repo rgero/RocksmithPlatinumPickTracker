@@ -37,7 +37,7 @@ export class SongList extends React.Component {
                             column={columnDefaults}
                             columns={[
                                 {
-                                Header: "Platinum Picks",
+                                Header: "Your Rocksmith Picks",
                                 columns: [
                                     {
                                         Header: "Artist Name",
