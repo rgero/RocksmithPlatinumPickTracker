@@ -8,7 +8,7 @@ import ReactTable, { ReactTableDefaults } from "react-table-6";
 import "react-table-6/react-table.css";
 
 
-export class SongList extends React.Component {
+export class DashboardPage extends React.Component {
     
     constructor(props){
         super(props);
@@ -30,6 +30,7 @@ export class SongList extends React.Component {
                 <div>
                     <div className="content-container">
                         <div className="content-navbar">
+                            <Link className="button" to="/import">Import Data</Link>
                             <Link className="button" to="/create">Log New Pick</Link>
                         </div>
                         <ReactTable
@@ -98,4 +99,4 @@ const mapStateToProps = (state, props)=>{
     };
 }
 
-export default connect(mapStateToProps)(SongList);
+export default connect(mapStateToProps)(DashboardPage);
