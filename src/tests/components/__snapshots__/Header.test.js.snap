@@ -10,7 +10,7 @@ exports[`Header Test 1`] = `
     <Link
       className="header__title"
       exact="true"
-      to="/practices"
+      to="/"
     >
       <h1>
         Rocksmith Pick Tracker

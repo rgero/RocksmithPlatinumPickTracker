@@ -10,6 +10,12 @@ exports[`Rendering No Songs 1`] = `
     >
       <Link
         className="button"
+        to="/import"
+      >
+        Import Data
+      </Link>
+      <Link
+        className="button"
         to="/create"
       >
         Log New Pick
@@ -223,6 +229,12 @@ exports[`Rendering Songs 1`] = `
     <div
       className="content-navbar"
     >
+      <Link
+        className="button"
+        to="/import"
+      >
+        Import Data
+      </Link>
       <Link
         className="button"
         to="/create"
