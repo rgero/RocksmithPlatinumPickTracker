@@ -76,7 +76,7 @@ export default class SongForm extends React.Component {
             </div>
 
                 {/* File Path */}
-                <div className = "form__importData__input">
+                <div className = "form__input">
                         <input id="fileInput"
                             type="file"
                             ref={(ref) => this.upload = ref}
