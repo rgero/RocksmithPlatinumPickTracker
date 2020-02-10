@@ -1,7 +1,7 @@
 import React from 'react';
 import ErrorModal from './ErrorModal';
 
-export default class SongForm extends React.Component {
+export default class ImportForm extends React.Component {
 
     constructor(props)
     {
@@ -11,11 +11,13 @@ export default class SongForm extends React.Component {
         this.clearError = this.clearError.bind(this);
         this.onFileTypeChange = this.onFileTypeChange.bind(this);
         this.onChangeFile = this.onChangeFile.bind(this);
+        this.handleCheckChange = this.handleCheckChange.bind(this);
 
         this.state = {
             error: "",
             filePath: "",
-            fileType: "csv"
+            fileType: "csv",
+            hasHeaders: false
         }
     }
 
@@ -23,7 +25,6 @@ export default class SongForm extends React.Component {
         event.stopPropagation();
         event.preventDefault();
         var file = event.target.files[0];
-        console.log(file);
         this.setState({filePath: file}); /// if you want to upload latter
     }
 
@@ -32,6 +33,15 @@ export default class SongForm extends React.Component {
         this.setState(()=>({
             fileType: value
         }))
+    }
+
+    handleCheckChange(e){
+        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+
+        this.setState({
+            hasHeaders: value
+        })
+
     }
 
 
@@ -48,7 +58,8 @@ export default class SongForm extends React.Component {
             this.setState({error: currentError})
             this.props.onSubmit({
                 filePath: this.state.filePath,
-                fileType: this.state.fileType
+                fileType: this.state.fileType,
+                hasHeaders: this.state.hasHeaders
             })
         } else {
             this.setState({error: currentError})
@@ -66,14 +77,21 @@ export default class SongForm extends React.Component {
 
                 {/* File Type */}
                 <div className="form__input">
-                <label className = "form__label">File Type</label>
-                <select value={this.state.fileType}
-                        onChange={this.onFileTypeChange}
-                >
-                    <option value="csv">CSV</option>
-                    <option value="xml">XML</option>
-                </select>
-            </div>
+                    <label className = "form__label">File Type</label>
+                    <select value={this.state.fileType}
+                            onChange={this.onFileTypeChange}
+                    >
+                        <option value="csv">CSV</option>
+                        <option value="xml">XML</option>
+                    </select>
+                    
+                </div>
+
+                
+                <div className="form__input">
+                    <label className = "form__label">Check if this file has the headers</label>
+                    <input name="hasHeaders" type="checkbox" checked={this.state.hasHeaders} onChange={this.handleCheckChange} />
+                </div>
 
                 {/* File Path */}
                 <div className = "form__input">

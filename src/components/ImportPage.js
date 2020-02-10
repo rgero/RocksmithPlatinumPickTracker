@@ -1,5 +1,6 @@
 import React from 'react';
 import ImportForm from './ImportForm';
+import {startAddSongs} from '../actions/songs';
 
 export class ImportPage extends React.Component {
 
@@ -15,7 +16,8 @@ export class ImportPage extends React.Component {
         this.fileReader.onloadend = this.handleFileRead;
 
         this.state = {
-            fileType: ""
+            fileType: "",
+            hasHeaders: false
         }
     }
 
@@ -29,30 +31,40 @@ export class ImportPage extends React.Component {
         // Split string into array
         var contentList = content.split('\n');
         
-        // Figure out headers
-        var headers = contentList[0].split(',');
-        var headerIndex = {
-            artist: 0,
-            songName: 0,
-            date: 0,
-            path: 0,
-            difficulty: 0,
-            accuracy: 0,
-            notes: 0,
-            pickLevel: 0,
+        // Check to see up
+        var songs = [];
+        var index = 0;
+        if (this.state.hasHeaders){
+            var index = 1;
         }
-        for(var i = 0; i < headers.length; i++)
+        for(var i = index; i < content.length - 1; i++)
         {
-            var entry = headers[i];
+            var entry = contentList[i]
+
+            if (entry){
+                entry = entry.split(',');
+                var testObject = {};
+                testObject["artist"] = entry[0];
+                testObject["songName"] = entry[1];
+                testObject["date"] = entry[2];
+                testObject["path"] = entry[3];
+                testObject["difficulty"] = entry[4];
+                testObject["accuracy"] = entry[5];
+                testObject["notes"] = entry[6];
+
+                songs.push(testObject);
+            }
 
         }
-
-
+        if (songs.length > 0){
+            startAddSongs(songs);
+        }
     }
 
     onSubmit(fileProps){
-        this.setState = ({
-            fileType: fileProps.fileType
+        this.setState({
+            fileType: fileProps.fileType,
+            hasHeaders: fileProps.hasHeaders
         });
         this.fileReader.readAsText(fileProps.filePath);
     }

@@ -87,3 +87,11 @@ export const startAddSong = (songData = {}) => {
         });
     };
 };
+
+export const startAddSongs = (songs = []) => {
+    return (dispatch, getState) => {
+        songs.forEach(song => {
+            startAddSong(song);
+        })
+    }
+}
