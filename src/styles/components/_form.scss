@@ -38,3 +38,10 @@
 .inputfile + label:hover {
     background-color: red;
 }
+
+.form__importData
+{
+  @extend .form;
+  padding-top: $l-size;
+    
+}

@@ -10,3 +10,16 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.content-noticebox {
+    margin: 0 auto;
+    max-width: 60rem;
+    padding: $s-size;
+    text-align: center;
+}
+
+.content-infobox {
+    padding: $s-size;
+    outline-style: solid;
+    outline-width: 1px;
+}

@@ -46,6 +46,10 @@ export default class SongForm extends React.Component {
         }
         if( currentError === ""){
             this.setState({error: currentError})
+            this.props.onSubmit({
+                filePath: this.state.filePath,
+                fileType: this.state.fileType
+            })
         } else {
             this.setState({error: currentError})
         }
@@ -57,7 +61,7 @@ export default class SongForm extends React.Component {
 
     render() {
         return (
-            <form className="form" onSubmit={this.onSubmit}>
+            <form className="form__importData" onSubmit={this.onSubmit}>
                 {this.state.error !== '' && <ErrorModal errorMessage={this.state.error} clearError={this.clearError} />}
 
                 {/* File Type */}
@@ -72,7 +76,7 @@ export default class SongForm extends React.Component {
             </div>
 
                 {/* File Path */}
-                <div className = "form__input">
+                <div className = "form__importData__input">
                         <input id="fileInput"
                             type="file"
                             ref={(ref) => this.upload = ref}
