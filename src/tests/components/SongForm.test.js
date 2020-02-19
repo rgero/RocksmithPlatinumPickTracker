@@ -101,21 +101,12 @@ test("Input - Accuracy Change - Invalid Input (Too long)", ()=>{
 })
 
 test("Input - Pick Level Change", ()=>{
-    const value = "bronze";
+    const value = "Bronze";
     const wrapper = shallow(<SongForm />);
-    expect(wrapper.state('level')).toBe("platinum");
+    expect(wrapper.state('level')).toBe("Platinum");
     const descriptionElem = wrapper.find('select').at(0) 
     descriptionElem.simulate('change', {
         target: {value}
     })
-    expect(wrapper.state('level')).toBe("bronze"); // Empty String is the current default value
+    expect(wrapper.state('level')).toBe(value); // Empty String is the current default value
 })
-
-/* TODO
-    - Valid Form Submission
-    - Once the error checking is in place
-        - Invalid Form Submission
-    - Once the Data Storage is in place
-        - Recalling Data.
-*/
-

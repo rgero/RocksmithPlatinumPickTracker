@@ -170,7 +170,7 @@ exports[`Rendering the Song Form Form 1`] = `
     </label>
     <select
       onChange={[Function]}
-      value="platinum"
+      value="Platinum"
     >
       <option
         value="Platinum"

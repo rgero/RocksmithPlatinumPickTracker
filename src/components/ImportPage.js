@@ -109,7 +109,7 @@ export class ImportPage extends React.Component {
             const successStatus = await this.processSongImport(fileContents);
             this.props.history.push('/');
         } catch (e) {
-            console.warn("I've got a sexy booty.");
+            console.warn(e.message);
         }
 
     }
