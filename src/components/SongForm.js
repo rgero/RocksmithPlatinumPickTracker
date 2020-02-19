@@ -23,7 +23,7 @@ export default class SongForm extends React.Component {
             date: this.props.songInfo ? moment(this.props.songInfo.date) : moment(),
             path: this.props.songInfo ? this.props.songInfo.path : "",
             difficulty: this.props.songInfo ? this.props.songInfo.difficulty : "",
-            level: this.props.songInfo ? this.props.songInfo.level : "platinum",
+            level: this.props.songInfo ? this.props.songInfo.level : "Platinum",
             accuracy: this.props.songInfo ? (this.props.songInfo.accuracy).toString() : "",
             notes: this.props.songInfo ? this.props.songInfo.notes : "",
             calendarFocused: false,

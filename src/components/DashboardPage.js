@@ -74,7 +74,9 @@ export class DashboardPage extends React.Component {
                                     },
                                     {
                                         Header: "Accuracy",
-                                        accessor: "accuracy",
+                                        id: "accuracy",
+                                        accessor: d => Number(d.accuracy).toFixed(2),
+                                        sortMethod: (a, b) => Number(a)-Number(b),
                                         style: { 'whiteSpace': 'unset'}
                                     }
                                 ]

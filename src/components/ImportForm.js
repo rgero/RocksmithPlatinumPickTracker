@@ -82,7 +82,8 @@ export default class ImportForm extends React.Component {
                             onChange={this.onFileTypeChange}
                     >
                         <option value="csv">CSV</option>
-                        <option value="xml">XML</option>
+                        <option value="tsv">TSV</option>
+                        <option value="bar">| separated</option>
                     </select>
                     
                 </div>
