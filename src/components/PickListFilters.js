@@ -33,13 +33,13 @@ export class PickListFilters extends React.Component {
 
     render(){
         return(
-            <div className="content-container">
+            <div className='content-container'>
                 {/* A controlled input is an input that is controlled by Javascript */}
-                <div className="input-group">
-                    <div className="input-group__item">
-                        <input type="text" className="text-input" value={this.props.filters.text} onChange={this.onTextChange} />
+                <div className='input-group'>
+                    <div className='input-group__item'>
+                        <input type='text' className='text-input' value={this.props.filters.text} onChange={this.onTextChange} />
                         </div>
-                    <div className="input-group__item">
+                    <div className='input-group__item'>
                         <DateRangePicker
                             startDate={this.props.filters.startDate}
                             endDate={this.props.filters.endDate}

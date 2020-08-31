@@ -2,23 +2,23 @@
 import moment from 'moment';
 
 const filtersDefaultState = {
-    text: "",
-    startDate: "",
-    endDate: ""
+    text: '',
+    startDate: '',
+    endDate: ''
 };
 const filtersReducer = (state = filtersDefaultState, action) => {
     switch(action.type){
-        case "SET_TEXT":
+        case 'SET_TEXT':
             return {
                 ...state,
                 text: action.newText
             }
-        case "SET_START_DATE":
+        case 'SET_START_DATE':
             return {
                 ...state,
                 startDate: action.startDate
             }
-        case "SET_END_DATE":
+        case 'SET_END_DATE':
             return {
                 ...state,
                 endDate: action.endDate

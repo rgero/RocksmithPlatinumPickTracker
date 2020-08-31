@@ -19,11 +19,11 @@ beforeEach(()=>{
     )
 })
 
-test("Snapshot rendering test", ()=>{
+test('Snapshot rendering test', ()=>{
     expect(wrapper).toMatchSnapshot();
 })
 
-test("Testing onSubmit", ()=>{
+test('Testing onSubmit', ()=>{
     const testObj = wrapper.find('SongForm');
     expect(testObj.length).toBe(1);
     testObj.prop('onSubmit')(songs[0]);
@@ -31,7 +31,7 @@ test("Testing onSubmit", ()=>{
     expect(onSubmit).toHaveBeenLastCalledWith(songs[0].id, songs[0]);
 })
 
-test("testing removeItem", ()=>{
+test('testing removeItem', ()=>{
     const testObj = wrapper.find('button');
     expect(testObj.length).toBe(1);
     testObj.simulate('click');

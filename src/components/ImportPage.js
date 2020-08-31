@@ -13,7 +13,7 @@ export class ImportPage extends React.Component {
         this.processSongImport = this.processSongImport.bind(this);
 
         this.state = {
-            fileType: "",
+            fileType: '',
             hasHeaders: false,
         }
     }
@@ -23,7 +23,7 @@ export class ImportPage extends React.Component {
         return new Promise((resolve, reject) => {
             tempFileReader.onerror = () => {
                 tempFileReader.abort();
-                reject(new DOMException("Problem with file"));
+                reject(new DOMException('Problem with file'));
             }
         
             tempFileReader.onload = () => {
@@ -54,28 +54,28 @@ export class ImportPage extends React.Component {
 
                     var sepCharacter = ',';
                     switch(this.state.fileType){
-                        case "csv":
-                            sepCharacter = ","
+                        case 'csv':
+                            sepCharacter = ','
                             break;
-                        case "tsv":
-                            sepCharacter = "\t";
+                        case 'tsv':
+                            sepCharacter = '\t';
                             break;
-                        case "bar":
-                            sepCharacter = "|"
+                        case 'bar':
+                            sepCharacter = '|'
                             break;
                         default:
                             break;
                     }
                     entry = entry.split(sepCharacter);
                     var testObject = {};
-                    testObject["artist"] = entry[0];
-                    testObject["songName"] = entry[1];
-                    testObject["date"] = entry[2];
-                    testObject["path"] = entry[3];
-                    testObject["difficulty"] = entry[4];
-                    testObject["accuracy"] = entry[5];
-                    testObject["notes"] = entry[6];
-                    testObject["level"] = "Platinum";
+                    testObject['artist'] = entry[0];
+                    testObject['songName'] = entry[1];
+                    testObject['date'] = entry[2];
+                    testObject['path'] = entry[3];
+                    testObject['difficulty'] = entry[4];
+                    testObject['accuracy'] = entry[5];
+                    testObject['notes'] = entry[6];
+                    testObject['level'] = 'Platinum';
 
                     songs.push(testObject);
                 }
@@ -91,11 +91,11 @@ export class ImportPage extends React.Component {
                 }
                 this.setState({
                     processing: false,
-                    processMessage: ""
+                    processMessage: ''
                 })
             }
 
-            resolve("Success");
+            resolve('Success');
         })
     }
 
@@ -117,16 +117,16 @@ export class ImportPage extends React.Component {
     render(){
         return(
             <div>
-                <div className="page-header">
-                    <div className="content-container">
-                        <h1 className="page-header__title">Import Data</h1>
+                <div className='page-header'>
+                    <div className='content-container'>
+                        <h1 className='page-header__title'>Import Data</h1>
                     </div>
                 </div>
-                <div className="content-container">
-                    <div className="content-infobox">
+                <div className='content-container'>
+                    <div className='content-infobox'>
                         The format should be the following:
-                        <div className="content-noticebox">Artist | Song Name | Date | Path | Difficulty | Accuracy | Notes</div>
-                        For this utility, the pick level "Platinum" is presumed.
+                        <div className='content-noticebox'>Artist | Song Name | Date | Path | Difficulty | Accuracy | Notes</div>
+                        For this utility, the pick level 'Platinum' is presumed.
                     </div>
                     <ImportForm onSubmit={this.onSubmit}/>
                 </div>

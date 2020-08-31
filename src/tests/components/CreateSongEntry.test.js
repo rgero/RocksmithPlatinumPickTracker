@@ -12,7 +12,7 @@ beforeEach(()=>{
     wrapper = shallow(<CreateSongEntry onSubmit={onSubmit} history={history}/>)
 })
 
-test("Snapshot test of the rendering", ()=>{
+test('Snapshot test of the rendering', ()=>{
     expect(wrapper).toMatchSnapshot();
 })
 

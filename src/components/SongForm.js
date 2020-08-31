@@ -17,17 +17,17 @@ export default class SongForm extends React.Component {
         this.clearError = this.clearError.bind(this);
 
         this.state = {
-            id: this.props.songInfo ? this.props.songInfo.id : "",
-            artist: this.props.songInfo ? this.props.songInfo.artist : "",
-            songName: this.props.songInfo ? this.props.songInfo.songName : "",
+            id: this.props.songInfo ? this.props.songInfo.id : '',
+            artist: this.props.songInfo ? this.props.songInfo.artist : '',
+            songName: this.props.songInfo ? this.props.songInfo.songName : '',
             date: this.props.songInfo ? moment(this.props.songInfo.date) : moment(),
-            path: this.props.songInfo ? this.props.songInfo.path : "",
-            difficulty: this.props.songInfo ? this.props.songInfo.difficulty : "",
-            level: this.props.songInfo ? this.props.songInfo.level : "Platinum",
-            accuracy: this.props.songInfo ? (this.props.songInfo.accuracy).toString() : "",
-            notes: this.props.songInfo ? this.props.songInfo.notes : "",
+            path: this.props.songInfo ? this.props.songInfo.path : '',
+            difficulty: this.props.songInfo ? this.props.songInfo.difficulty : '',
+            level: this.props.songInfo ? this.props.songInfo.level : 'Platinum',
+            accuracy: this.props.songInfo ? (this.props.songInfo.accuracy).toString() : '',
+            notes: this.props.songInfo ? this.props.songInfo.notes : '',
             calendarFocused: false,
-            error: "",
+            error: '',
         }
 
     }
@@ -36,13 +36,13 @@ export default class SongForm extends React.Component {
         e.preventDefault();
 
         //Validate Form;
-        var currentError = "";
+        var currentError = '';
         if (!this.state.artist || !this.state.songName || !this.state.date || !this.state.path || !this.state.accuracy || !this.state.difficulty)
         {
-            currentError = "Please inspect the form";
+            currentError = 'Please inspect the form';
         }
         
-        if( currentError === ""){
+        if( currentError === ''){
             this.setState({error: currentError})
             this.props.onSubmit({
                 id: this.state.id,
@@ -63,27 +63,27 @@ export default class SongForm extends React.Component {
     onTextChange = (value) => (evt) => {
         var newValue = evt.target.value;
         switch(value){
-            case "artist":
+            case 'artist':
                 this.setState({
                     artist: newValue
                 });
                 break;
-            case "songName":
+            case 'songName':
                 this.setState({
                     songName: newValue
                 });
                 break;
-            case "path":
+            case 'path':
                 this.setState({
                     path: newValue
                 });
                 break;
-            case "difficulty":
+            case 'difficulty':
                 this.setState({
                     difficulty: newValue
                 });
                 break;
-            case "notes":
+            case 'notes':
                 this.setState({
                     notes: newValue
                 });
@@ -100,7 +100,7 @@ export default class SongForm extends React.Component {
     }
 
     onCalendarFocusChanged(calendarFocused){
-        calendarFocused = calendarFocused["focused"]
+        calendarFocused = calendarFocused['focused']
         this.setState(() => ({calendarFocused}));
     }
 
@@ -121,43 +121,43 @@ export default class SongForm extends React.Component {
     }
 
     clearError(){
-        this.setState({error: ""})
+        this.setState({error: ''})
     }
 
     render() {
         return (
-            <form className="form" onSubmit={this.onSubmit}>
+            <form className='form' onSubmit={this.onSubmit}>
                 {this.state.error !== '' && <ErrorModal errorMessage={this.state.error} clearError={this.clearError} />}
                 
                 {/* Artist */}
-                <div className = "form__input">
-                    <label className = "form__label">Artist</label>
+                <div className = 'form__input'>
+                    <label className = 'form__label'>Artist</label>
                     <input
-                        type="text"
-                        className="text-input"
-                        placeholder="Artist"
+                        type='text'
+                        className='text-input'
+                        placeholder='Artist'
                         autoFocus
                         value={this.state.artist}
-                        onChange={this.onTextChange("artist")}
+                        onChange={this.onTextChange('artist')}
                     />
                 </div>
 
                 {/* Song Name */}
-                <div className = "form__input">
-                    <label className = "form__label">Song Name</label>
+                <div className = 'form__input'>
+                    <label className = 'form__label'>Song Name</label>
                     <input
-                        type="text"
-                        className="text-input"
-                        placeholder="Song Name"
+                        type='text'
+                        className='text-input'
+                        placeholder='Song Name'
                         autoFocus
                         value={this.state.songName}
-                        onChange={this.onTextChange("songName")}
+                        onChange={this.onTextChange('songName')}
                     />
                 </div>
 
                 {/* Date */}
-                <div className = "form__input">
-                    <label className = "form__label">Date</label>
+                <div className = 'form__input'>
+                    <label className = 'form__label'>Date</label>
                     <SingleDatePicker 
                         date={this.state.date}
                         onDateChange={this.onDateChange}
@@ -170,51 +170,51 @@ export default class SongForm extends React.Component {
                 </div>
 
                 {/* Path */}
-                <div className = "form__input">
-                    <label className = "form__label">Path</label>
+                <div className = 'form__input'>
+                    <label className = 'form__label'>Path</label>
                     <input
-                        type="text"
-                        className="text-input"
-                        placeholder="Path"
+                        type='text'
+                        className='text-input'
+                        placeholder='Path'
                         autoFocus
                         value={this.state.path}
-                        onChange={this.onTextChange("path")}
+                        onChange={this.onTextChange('path')}
                     />
                 </div>
 
                 {/* Pick Level */}
-                <div className="form__input">
-                    <label className = "form__label">Pick Level</label>
+                <div className='form__input'>
+                    <label className = 'form__label'>Pick Level</label>
                     <select value={this.state.level}
                             onChange={this.onPickLevelChange}
                     >
-                        <option value="Platinum">Platinum</option>
-                        <option value="Gold">Gold</option>
-                        <option value="Silver">Silver</option>
-                        <option value="Bronze">Bronze</option>
+                        <option value='Platinum'>Platinum</option>
+                        <option value='Gold'>Gold</option>
+                        <option value='Silver'>Silver</option>
+                        <option value='Bronze'>Bronze</option>
                     </select>
                 </div>
 
                 {/* Difficulty */}
-                <div className = "form__input">
-                    <label className = "form__label">Difficulty</label>
+                <div className = 'form__input'>
+                    <label className = 'form__label'>Difficulty</label>
                     <input
-                        type="text"
-                        className="text-input"
-                        placeholder="Difficulty"
+                        type='text'
+                        className='text-input'
+                        placeholder='Difficulty'
                         autoFocus
                         value={this.state.difficulty}
-                        onChange={this.onTextChange("difficulty")}
+                        onChange={this.onTextChange('difficulty')}
                     />
                 </div>
 
                 {/* Accuracy */}
-                <div className = "form__input">
-                    <label className = "form__label">Accuracy</label>
+                <div className = 'form__input'>
+                    <label className = 'form__label'>Accuracy</label>
                     <input
-                        type="text"
-                        className="text-input"
-                        placeholder="Accuracy"
+                        type='text'
+                        className='text-input'
+                        placeholder='Accuracy'
                         autoFocus
                         value={this.state.accuracy}
                         onChange={this.onAccuracyChange}
@@ -222,19 +222,19 @@ export default class SongForm extends React.Component {
                 </div>
 
                 {/* Notes */}
-                <div className = "form__input">
-                    <label className = "form__label">Notes</label>
+                <div className = 'form__input'>
+                    <label className = 'form__label'>Notes</label>
                     <textarea 
-                        placeholder="Notes about the song (optional)"
-                        className="textarea"
+                        placeholder='Notes about the song (optional)'
+                        className='textarea'
                         value={this.state.notes}
-                        onChange={this.onTextChange("notes")}
+                        onChange={this.onTextChange('notes')}
                     >
                     </textarea>
                 </div>
 
-                <div className = "form__input">
-                    <button className="button">Save Entry</button>
+                <div className = 'form__input'>
+                    <button className='button'>Save Entry</button>
                 </div>
             </form>
         )

@@ -13,7 +13,7 @@ export const removeSong = ( id ) => ({
 })
 
 export const editSong = ( id, update = {}) => ({
-    type: "EDIT_SONG",
+    type: 'EDIT_SONG',
     id,
     update
 })
@@ -68,13 +68,13 @@ export const startAddSong = (songData = {}) => {
         const uid = getState().auth.uid;
         const {
             date=0,
-            artist="",
-            songName="",
-            path="",
-            difficulty="",
-            level="",
-            accuracy="",
-            notes="",
+            artist='',
+            songName='',
+            path='',
+            difficulty='',
+            level='',
+            accuracy='',
+            notes='',
         } = songData;
 
         const song = {date, artist, songName, path, difficulty, level, accuracy, notes};

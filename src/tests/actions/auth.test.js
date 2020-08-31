@@ -5,12 +5,12 @@ import {login, logout} from '../../actions/auth';
 const createMockStore = configureMockStore([thunk]);
 
 test('Testing Login reducer', ()=> {
-    var uid = "aoisadinsaidn";
+    var uid = 'aoisadinsaidn';
     const store = createMockStore({});
     store.dispatch(login(uid));
     const actions = store.getActions();
     expect(actions[0]).toEqual({
-        type: "LOGIN",
+        type: 'LOGIN',
         uid: uid
     });
 })
@@ -20,6 +20,6 @@ test('Testing Logout reducer', ()=> {
     store.dispatch(logout());
     const actions = store.getActions();
     expect(actions[0]).toEqual({
-        type: "LOGOUT",
+        type: 'LOGOUT',
     });
 })

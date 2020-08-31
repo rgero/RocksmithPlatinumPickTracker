@@ -5,7 +5,7 @@ import {firebase} from './firebase/firebase';
 
 // Styling
 import 'normalize.css/normalize.css';
-import "./styles/style.scss"
+import './styles/style.scss'
 
 // Imports for React Dates
 import 'react-dates/initialize'; // We need this before we use react-dates

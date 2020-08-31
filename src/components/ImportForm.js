@@ -14,9 +14,9 @@ export default class ImportForm extends React.Component {
         this.handleCheckChange = this.handleCheckChange.bind(this);
 
         this.state = {
-            error: "",
-            filePath: "",
-            fileType: "csv",
+            error: '',
+            filePath: '',
+            fileType: 'csv',
             hasHeaders: false
         }
     }
@@ -49,12 +49,12 @@ export default class ImportForm extends React.Component {
         e.preventDefault();
 
         // Check the error
-        var currentError = "";
+        var currentError = '';
         if (!this.state.filePath)
         {
-            currentError = "You have not specified a file.";
+            currentError = 'You have not specified a file.';
         }
-        if( currentError === ""){
+        if( currentError === ''){
             this.setState({error: currentError})
             this.props.onSubmit({
                 filePath: this.state.filePath,
@@ -67,44 +67,44 @@ export default class ImportForm extends React.Component {
     }
 
     clearError(){
-        this.setState({error: ""})
+        this.setState({error: ''})
     }
 
     render() {
         return (
-            <form className="form__importData" onSubmit={this.onSubmit}>
+            <form className='form__importData' onSubmit={this.onSubmit}>
                 {this.state.error !== '' && <ErrorModal errorMessage={this.state.error} clearError={this.clearError} />}
 
                 {/* File Type */}
-                <div className="form__input">
-                    <label className = "form__label">File Type</label>
+                <div className='form__input'>
+                    <label className = 'form__label'>File Type</label>
                     <select value={this.state.fileType}
                             onChange={this.onFileTypeChange}
                     >
-                        <option value="csv">CSV</option>
-                        <option value="tsv">TSV</option>
-                        <option value="bar">| separated</option>
+                        <option value='csv'>CSV</option>
+                        <option value='tsv'>TSV</option>
+                        <option value='bar'>| separated</option>
                     </select>
                     
                 </div>
 
                 
-                <div className="form__input">
-                    <label className = "form__label">Check if this file has the headers</label>
-                    <input name="hasHeaders" type="checkbox" checked={this.state.hasHeaders} onChange={this.handleCheckChange} />
+                <div className='form__input'>
+                    <label className = 'form__label'>Check if this file has the headers</label>
+                    <input name='hasHeaders' type='checkbox' checked={this.state.hasHeaders} onChange={this.handleCheckChange} />
                 </div>
 
                 {/* File Path */}
-                <div className = "form__input">
-                        <input id="fileInput"
-                            type="file"
+                <div className = 'form__input'>
+                        <input id='fileInput'
+                            type='file'
                             ref={(ref) => this.upload = ref}
                             onChange={this.onChangeFile}
                         />
                 </div>
 
-                <div className = "form__input center">
-                    <button className="button">Import Data</button>
+                <div className = 'form__input center'>
+                    <button className='button'>Import Data</button>
                 </div>
             </form>
         )

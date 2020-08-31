@@ -23,18 +23,18 @@ export class EditSongPage extends React.Component {
     render(){
         return(
             <div>
-                <div className="page-header">
-                    <div className="content-container">
-                        <h1 className="page-header__title">Editing '{this.props.song.artist} - {this.props.song.songName}'</h1>
+                <div className='page-header'>
+                    <div className='content-container'>
+                        <h1 className='page-header__title'>Editing '{this.props.song.artist} - {this.props.song.songName}'</h1>
                     </div>
                 </div>
-                <div className="content-container">
+                <div className='content-container'>
                     <SongForm
                         songInfo = {this.props.song}
                         onSubmit={this.onSubmit}
                         
                     />
-                    <button className="button button--secondary" onClick={this.removeItem}>Remove</button>
+                    <button className='button button--secondary' onClick={this.removeItem}>Remove</button>
                 </div>
             </div>
         )

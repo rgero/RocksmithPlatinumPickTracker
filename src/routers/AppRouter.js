@@ -14,17 +14,17 @@ import ImportPage from '../components/ImportPage';
 
 
 
-export const history = require("history").createBrowserHistory();
+export const history = require('history').createBrowserHistory();
 
 const AppRouter = () => (
   <Router history={history}>
     <div>
       <Switch>
-        <PublicRoute path="/" component={LoginPage} exact={true}/>
-        <PrivateRoute path="/dashboard" component={DashboardPagePage} exact={true} />
-        <PrivateRoute path="/create" component={CreateSongEntryPage}/>
-        <PrivateRoute path="/edit/:id" component={EditSongEntry} />
-        <PrivateRoute path="/import" component={ImportPage} exact={true}/>    
+        <PublicRoute path='/' component={LoginPage} exact={true}/>
+        <PrivateRoute path='/dashboard' component={DashboardPagePage} exact={true} />
+        <PrivateRoute path='/create' component={CreateSongEntryPage}/>
+        <PrivateRoute path='/edit/:id' component={EditSongEntry} />
+        <PrivateRoute path='/import' component={ImportPage} exact={true}/>    
         <Route component={NotFoundPage}/>    
       </Switch>
     </div>

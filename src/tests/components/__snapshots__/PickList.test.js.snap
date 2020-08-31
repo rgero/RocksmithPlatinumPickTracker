@@ -346,7 +346,7 @@ exports[`Rendering Songs 1`] = `
         "accuracy": "100.00",
         "artist": "Jake's Super Band",
         "date": "2020-01-06",
-        "difficulty": "Easy. To strong",
+        "difficulty": "Easy. Too strong",
         "id": "3",
         "level": "Silver",
         "notes": "",

@@ -7,7 +7,7 @@ const getVisibleSongs = (songs, { text, startDate, endDate }) => {
         const createdMoment = moment(song.date);
         const startDateMatch = startDate ? startDate.isSameOrBefore(createdMoment, 'day') : true;
         const endDateMatch = endDate ? endDate.isSameOrAfter(createdMoment, 'day') : true;
-        const textMatch = typeof text !== "string" || song.artist.toLowerCase().includes(text.toLowerCase()) || song.songName.toLowerCase().includes(text.toLowerCase())
+        const textMatch = typeof text !== 'string' || song.artist.toLowerCase().includes(text.toLowerCase()) || song.songName.toLowerCase().includes(text.toLowerCase())
 
         return startDateMatch && endDateMatch && textMatch;
     })

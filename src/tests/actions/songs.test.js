@@ -4,7 +4,7 @@ import {addSong, setSongs, editSong, removeSong, startAddSong, startEditSong, st
 import songs from '../fixtures/songs'
 import database from '../../firebase/firebase';
 
-const uid = "testString";
+const uid = 'testString';
 const defAuthState = {auth: {uid} }
 const createMockStore = configureMockStore([thunk]);
 
@@ -24,7 +24,7 @@ test('Testing addSong action', ()=> {
     store.dispatch(addSong(song));
     const actions = store.getActions();
     expect(actions[0]).toEqual({
-        type: "ADD_SONG",
+        type: 'ADD_SONG',
         song: song
     });
 })
@@ -34,7 +34,7 @@ test('Testing setSongs action', ()=> {
     store.dispatch(setSongs(songs));
     const actions = store.getActions();
     expect(actions[0]).toEqual({
-        type: "SET_SONGS",
+        type: 'SET_SONGS',
         songs: songs
     });
 })
@@ -45,7 +45,7 @@ test('Testing editSong action', ()=> {
     store.dispatch(editSong(1, update));
     const actions = store.getActions();
     expect(actions[0]).toEqual({
-        type: "EDIT_SONG",
+        type: 'EDIT_SONG',
         id: 1,
         update: update
     });
@@ -57,7 +57,7 @@ test('Testing removeSong action', ()=> {
     store.dispatch(removeSong(removeID));
     const actions = store.getActions();
     expect(actions[0]).toEqual({
-        type: "REMOVE_SONG",
+        type: 'REMOVE_SONG',
         id: removeID
     });
 })
@@ -65,12 +65,12 @@ test('Testing removeSong action', ()=> {
 /* Firebase tests */
 test('should edit song on firebase', (done)=> {
     var target = songs[1];
-    target.artist = "1331";
+    target.artist = '1331';
     const store = createMockStore(defAuthState);
     store.dispatch(startEditSong(target.id, target)).then(()=> {
         const actions = store.getActions();
         expect(actions[0]).toEqual({
-            type: "EDIT_SONG",
+            type: 'EDIT_SONG',
             id: target.id,
             update: target
 
@@ -85,14 +85,14 @@ test('should edit song on firebase', (done)=> {
 test('should add song to database and store', (done)=> {
     const store = createMockStore(defAuthState);
     const songData = {
-        artist: "Rise",
-        songName: "Against",
-        path: "Bass",
-        date: "2021-01-06",
-        level: "Silver",
-        difficulty: "Master",
-        accuracy: "100.00",
-        notes: ""
+        artist: 'Rise',
+        songName: 'Against',
+        path: 'Bass',
+        date: '2021-01-06',
+        level: 'Silver',
+        difficulty: 'Master',
+        accuracy: '100.00',
+        notes: ''
     }
     store.dispatch(startAddSong(songData)).then(()=> {
         const actions = store.getActions(); // This will return an array of actions
@@ -123,7 +123,7 @@ test('should remove song from firebase', (done)=> {
     store.dispatch(startRemoveSong(songs[0].id)).then(()=> {
         const actions = store.getActions();
         expect(actions[0]).toEqual({
-            type: "REMOVE_SONG",
+            type: 'REMOVE_SONG',
             id: targetSong.id
         });
         return database.ref(`users/${uid}/pick_tracker/songs/${targetSong.id}`).once('value');

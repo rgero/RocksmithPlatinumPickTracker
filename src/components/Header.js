@@ -4,10 +4,10 @@ import {connect} from 'react-redux';
 import {startLogout} from '../actions/auth';
 
 export const Header = ({ startLogout }) => (
-    <header className="header">
-        <div className="header__content">
-            <Link className="header__title" to="/" exact="true"><h1>Rocksmith Pick Tracker</h1></Link>
-            <button className="button button--link" onClick={startLogout}>Log out</button>
+    <header className='header'>
+        <div className='header__content'>
+            <Link className='header__title' to='/' exact='true'><h1>Rocksmith Pick Tracker</h1></Link>
+            <button className='button button--link' onClick={startLogout}>Log out</button>
         </div>
     </header>
 );

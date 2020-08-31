@@ -10,11 +10,11 @@ export class LoginPage extends React.Component {
 
     render() {
         return (
-            <div className="box-layout">
-                <div className="box-layout__box">
-                    <h1 className="box-layout__title">Welcome to the Rocksmith Pick Tracker</h1>
+            <div className='box-layout'>
+                <div className='box-layout__box'>
+                    <h1 className='box-layout__title'>Welcome to the Rocksmith Pick Tracker</h1>
                     <p>It's time to write a tag-line</p>
-                    <button className="button" onClick={this.props.startGoogleLogin}>Login with Google!</button>
+                    <button className='button' onClick={this.props.startGoogleLogin}>Login with Google!</button>
                 </div>
             </div>
         )
